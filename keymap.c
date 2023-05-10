@@ -23,8 +23,8 @@ enum layer_names {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [DEF] = LAYOUT(
     KC_J,             KC_D,        KC_U,         KC_A,           KC_X,                                   KC_P,        KC_H,         KC_L,        KC_M,        KC_W,
-    KC_C,             KC_T,        KC_I,         KC_E,           KC_O,                                   KC_B,        KC_N,         KC_R,        KC_S,        KC_G,
-    KC_F,             KC_V,        DE_UDIA,      DE_ADIA,        DE_ODIA,      _______,     _______,     DE_Y,        DE_Z,         MO(SHIF),    KC_COMM,     TD(KQ),
+    KC_C,             KC_T,        KC_I,         KC_E,           KC_O,                                   KC_B,        KC_N,         KC_R,        TD(ESZET),   KC_G,
+    KC_F,             TD(VEXCL),   DE_UDIA,      DE_ADIA,        DE_ODIA,      _______,     _______,     DE_Y,        DE_Z,         MO(SHIF),    TD(COMMQ),   TD(KQ),
     _______,          _______,     _______,      TD(NAVNUM),     MO(SHIF),     KC_DOT,      KC_BSPC,     KC_SPC,      KC_ENT,       _______,     _______,     _______ ),
 
 
@@ -53,10 +53,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,         _______,      _______,      _______,        _______,      _______,     _______,    _______,      _______,      _______,      _______,      _______ ),
 
   [STRG] = LAYOUT( 
-    _______,         _______,      _______,      _______,        _______,                               _______,      _______,      _______,      _______,      _______,
-    _______,         _______,      _______,      _______,        _______,                               _______,      _______,      _______,      _______,      _______,
-    _______,         _______,      _______,      _______,        _______,      _______,     _______,    _______,      _______,      _______,      _______,      _______,
-    _______,         _______,      _______,      _______,        _______,      _______,     _______,    _______,      _______,      _______,      _______,      _______ ),
+    _______,         FN_DESKTOP,   _______,      FN_SELALL,      FN_CUT,                                FN_PRINT,     _______,      FN_LCKSCRN,   FN_ROTATE,    FN_TXTSHT,
+    _______,         C(KC_T),      FN_TXTSHT,    FN_EXPL,        _______,                               FN_BULLET,    FN_NEW,       FN_RUN,       FN_SAVE,      FN_SCRNSHT,
+    FN_SEARCH,       _______,      _______,      _______,        _______,      _______,     _______,    FN_REDO,      FN_UNDO,      _______,      FN_STREAM,    FN_PROJECT,
+    _______,         _______,      _______,      _______,        _______,      _______,     C(BSPC),    _______,      C(ENTER),      _______,      _______,     _______ ),
 
   [FFOX] = LAYOUT( 
     _______,         _______,      _______,      _______,        _______,                               _______,      FN_FFGOBACK,  FN_FFNTAB,    FN_FFGOFORTH, _______,

@@ -18,6 +18,8 @@ typedef struct {
 enum {
     KQ,
     NAVNUM,
+    COMMQ,
+    VEXCL,
 };
 
 td_state_t cur_dance(qk_tap_dance_state_t *state) {
@@ -64,7 +66,34 @@ void navnum_res(qk_tap_dance_state_t *state, void *user_data) {
     xtap_state.state = TD_NONE;
 }
 
+void vexcl(qk_tap_dance_state_t *state, void *user_data) {
+if (state->count == 1) {
+  SEND_STRING ("v");
+  reset_tap_dance (state); }
+else if (state->count == 2) { SEND_STRING("!"); }
+}
+
+void commq(qk_tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+  SEND_STRING (",");
+  reset_tap_dance (state); }
+else if (state->count == 2) { SEND_STRING("?"); }
+}
+
+void eszet(qk_tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+  SEND_STRING ("s");
+  reset_tap_dance (state); }
+    else if (state->count == 2) {
+  SEND_STRING ("ss");
+  reset_tap_dance (state); }
+else if (state->count == 3) { SEND_STRING("ß"); }
+}
+
 qk_tap_dance_action_t tap_dance_actions[] = {
     [NAVNUM] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, navnum, navnum_res),
     [KQ] = ACTION_TAP_DANCE_DOUBLE(KC_K, KC_Q),
+    [VEXCL] = ACTION_TAP_DANCE_FN(vexcl),
+    [COMMQ] = ACTION_TAP_DANCE_FN(commq),
+    [ESZET] = ACTION_TAP_DANCE_FN(eszet),
 };
