@@ -31,9 +31,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [DEF] = LAYOUT(
-    KC_J,             KC_D,        KC_U,         TD(AA),         KC_X,                                   KC_P,        KC_H,         KC_L,        KC_M,        KC_W,
-    LT(STRG,KC_C),    KC_T,        KC_I,         TD(EE),         KC_O,                                   KC_B,        KC_N,         KC_R,        TD(ESZET),   KC_G,
-    KC_F,             TD(VEXCL),   DE_UDIA,      TD(ADIAAT),     TD(OE),      _______,     _______,     TD(YMINS),   DE_Z,         MO(SHIF),    TD(COMMQ),   TD(KQ),
+    KC_J,             KC_D,        TD(UU),       TD(AA),         KC_X,                                   KC_P,        KC_H,         KC_L,        KC_M,        KC_W,
+    LT(STRG,KC_C),    KC_T,        TD(II),       TD(EE),         KC_O,                                   KC_B,        KC_N,         KC_R,        TD(ESZET),   KC_G,
+    KC_F,             TD(VEXCL),   TD(UE),        TD(ADIAAT),     TD(OE),      _______,     _______,     TD(YMINS),   DE_Z,         MO(SHIF),    TD(COMMQ),   TD(KQ),
     _______,          _______,     _______,      TD(NAVNUM),     MO(SHIF),     KC_DOT,      KC_BSPC,     KC_SPC,      KC_ENT,       _______,     _______,     _______ ),
 
 
@@ -50,10 +50,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,         _______,      _______,      UNNAV,          _______,      _______,     _______,    _______,      _______,      _______,      _______,      _______ ),
 
   [NUM] = LAYOUT( 
-    _______,         _______,      _______,      _______,        _______,                               _______,      KC_7,         KC_8,         KC_9,         _______,
+    _______,         _______,      _______,      _______,        _______,                               TD(PLUSIST)   KC_7,         KC_8,         KC_9,         TD(EURDOLLPARA),
     _______,         _______,      _______,      _______,        _______,                             TD(STARPIPEPM), KC_4,         KC_5,         KC_6,         KC_0,
     _______,         _______,      _______,      _______,        _______,      _______,     _______,    DE_MINS,      KC_1,         KC_2,         KC_3,         _______,
-    _______,         _______,      _______,      UNNUM,          _______,      KC_DOT,      KC_BSPC,    KC_SPC,       KC_ENT,       _______,      _______,      _______ ),
+    _______,         _______,      _______,      UNNUM,          _______,      KC_DOT,      KC_BSPC,    KC_SPC,       TD(ENTIST),   _______,      _______,      _______ ),
 
   [NUMSHIF] = LAYOUT( 
     _______,         _______,      _______,      _______,        _______,                               _______,      _______,      _______,      _______,      _______,
