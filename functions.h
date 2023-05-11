@@ -1,6 +1,6 @@
 #define FN_PRINT C(KC_P) //
 #define FN_SEALL C(KC_A) //
-#define FN_CKSCRN LWIN(KC_L) //
+#define FN_LCKSCRN LWIN(KC_L) //
 #define FN_EXPL LWIN(KC_E) //
 #define FN_RUN LWIN(KC_R) //
 #define FN_COPY C(KC_C) //
