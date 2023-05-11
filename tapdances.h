@@ -154,6 +154,9 @@ void aa(qk_tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
   SEND_STRING(SS_TAP(X_A));
   reset_tap_dance (state); }
+    else if (state->count == 2) {
+  SEND_STRING(SS_TAP(X_A) SS_TAP(X_A));
+  reset_tap_dance (state); }
     else if (state->count == 3) {
     register_code(KC_LALT);
     tap_code(KC_KP_1);
@@ -166,6 +169,9 @@ void aa(qk_tap_dance_state_t *state, void *user_data) {
 void ee(qk_tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
   SEND_STRING(SS_TAP(X_E));
+  reset_tap_dance (state); }
+    else if (state->count == 2) {
+  SEND_STRING(SS_TAP(X_E) SS_TAP(X_E));
   reset_tap_dance (state); }
     else if (state->count == 3) {
     register_code(KC_LALT);
@@ -180,6 +186,9 @@ void ii(qk_tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
   SEND_STRING(SS_TAP(X_I));
   reset_tap_dance (state); }
+    else if (state->count == 2) {
+  SEND_STRING(SS_TAP(X_I) SS_TAP(X_I));
+  reset_tap_dance (state); }
     else if (state->count == 3) {
     register_code(KC_LALT);
     tap_code(KC_KP_1);
@@ -192,6 +201,9 @@ void ii(qk_tap_dance_state_t *state, void *user_data) {
 void oo(qk_tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
   SEND_STRING(SS_TAP(X_O));
+  reset_tap_dance (state); }
+    else if (state->count == 2) {
+  SEND_STRING(SS_TAP(X_O) SS_TAP(X_O));
   reset_tap_dance (state); }
     else if (state->count == 3) {
     register_code(KC_LALT);
@@ -206,7 +218,7 @@ void uu(qk_tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
   SEND_STRING(SS_TAP(X_U));
   reset_tap_dance (state); }
-    else if (state->count == 3) {
+    else if (state->count == 2) {
     register_code(KC_LALT);
     tap_code(KC_KP_1);
     tap_code(KC_KP_6);
@@ -217,9 +229,9 @@ void uu(qk_tap_dance_state_t *state, void *user_data) {
 
 void oe(qk_tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
-  SEND_STRING(SS_TAP(X_A));
+  SEND_STRING(SS_TAP(X_SCLN));
   reset_tap_dance (state); }
-    else if (state->count == 3) {
+    else if (state->count == 2) {
     register_code(KC_LALT);
     tap_code(KC_KP_0);
     tap_code(KC_KP_3);
@@ -231,9 +243,9 @@ void oe(qk_tap_dance_state_t *state, void *user_data) {
 
 void ue(qk_tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
-  SEND_STRING(SS_TAP(X_A));
+  SEND_STRING(SS_TAP(X_LBRC));
   reset_tap_dance (state); }
-    else if (state->count == 3) {
+    else if (state->count == 2) {
     register_code(KC_LALT);
     tap_code(KC_KP_0);
     tap_code(KC_KP_3);

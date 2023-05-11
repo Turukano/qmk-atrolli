@@ -1,5 +1,5 @@
 //COmbo mit NAVNUM und STRG für modded layer
-
+/*
 enum combos {
   AB_ESC,
   JK_TAB,
@@ -19,4 +19,4 @@ combo_t key_combos[] = {
   [JK_TAB] = COMBO(jk_combo, KC_TAB),
   [QW_SFT] = COMBO(qw_combo, KC_LSFT),
   [SD_LAYER] = COMBO(sd_combo, MO(_LAYER)),
-};
+};*/
