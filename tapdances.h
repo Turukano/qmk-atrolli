@@ -42,6 +42,7 @@ enum {
     EURDOLLPARA,
     ENTIST,
     PLUSIST,
+    PERDEGTILD,
 };
 
 td_state_t cur_dance(qk_tap_dance_state_t *state) {
@@ -219,6 +220,9 @@ void uu(qk_tap_dance_state_t *state, void *user_data) {
   SEND_STRING(SS_TAP(X_U));
   reset_tap_dance (state); }
     else if (state->count == 2) {
+  SEND_STRING(SS_TAP(X_U) SS_TAP(X_U));
+  reset_tap_dance (state); }
+    else if (state->count == 3) {
     register_code(KC_LALT);
     tap_code(KC_KP_1);
     tap_code(KC_KP_6);
@@ -354,13 +358,13 @@ void shiue(qk_tap_dance_state_t *state, void *user_data) {
 
 void eurdollpara(qk_tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
-  SEND_STRING(SS_RALT(SS_TAP(X_E)));
+  SEND_STRING(SS_RALT(SS_TAP(X_E))); //€
   reset_tap_dance (state); }
     else if (state->count == 2) {
-  SEND_STRING(SS_LSFT(SS_TAP(X_4)));
+  SEND_STRING(SS_LSFT(SS_TAP(X_4))); //$
   reset_tap_dance (state); }
     else if (state->count == 3) {
-  SEND_STRING(SS_LSFT(SS_TAP(X_3)));
+  SEND_STRING(SS_LSFT(SS_TAP(X_3))); //§
     }
 }
 
@@ -379,6 +383,18 @@ void plusist(qk_tap_dance_state_t *state, void *user_data) {
   reset_tap_dance (state); }
     else if (state->count == 2) {
   SEND_STRING(SS_LSFT(SS_TAP(X_0)));
+    }
+}
+
+void perdegtild(qk_tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+  SEND_STRING(SS_LSFT(SS_TAP(X_5))); //%
+  reset_tap_dance (state); }
+    else if (state->count == 2) {
+  SEND_STRING(SS_LSFT(SS_TAP(X_GRV))); //°
+  reset_tap_dance (state); }
+    else if (state->count == 3) {
+  SEND_STRING(SS_RALT(SS_TAP(X_RBRC))); //~
     }
 }
 
@@ -409,4 +425,5 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     [EURDOLLPARA] = ACTION_TAP_DANCE_FN(eurdollpara),
     [ENTIST] = ACTION_TAP_DANCE_FN(entist),
     [PLUSIST] = ACTION_TAP_DANCE_FN(plusist),
+    [PERDEGTILD] = ACTION_TAP_DANCE_FN(perdegtild),
 };

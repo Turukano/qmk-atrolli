@@ -1,6 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "keymap_german.h"
 #include "functions.h"
+#include "combos.h"
 
 enum layer_names {
     DEF,
@@ -52,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [NUM] = LAYOUT( 
     _______,         _______,      _______,      _______,        _______,                               TD(PLUSIST),   KC_7,         KC_8,         KC_9,         TD(EURDOLLPARA),
     _______,         _______,      _______,      _______,        _______,                             TD(STARPIPEPM), KC_4,         KC_5,         KC_6,         KC_0,
-    _______,         _______,      _______,      _______,        _______,      _______,     _______,    DE_MINS,      KC_1,         KC_2,         KC_3,         _______,
+    _______,         _______,      _______,      _______,        _______,      _______,     _______,    DE_MINS,      KC_1,         KC_2,         KC_3,         TD(PERDEGTILD),
     _______,         _______,      _______,      UNNUM,          _______,      KC_DOT,      KC_BSPC,    KC_SPC,       TD(ENTIST),   _______,      _______,      _______ ),
 
   [NUMSHIF] = LAYOUT( 
