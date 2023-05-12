@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "keymap_german.h"
 #include "functions.h"
-#include "combos.h"
+
 
 enum layer_names {
     DEF,
@@ -29,18 +29,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 };
 
 #include "tapdances.h"
+#include "combos.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [DEF] = LAYOUT(
-    KC_J,             KC_D,        TD(UU),       TD(AA),         KC_X,                                   KC_P,        KC_H,         KC_L,        KC_M,        KC_W,
-    LT(STRG,KC_C),    KC_T,        TD(II),       TD(EE),         KC_O,                                   KC_B,        KC_N,         KC_R,        TD(ESZET),   KC_G,
-    KC_F,             TD(VEXCL),   TD(UE),        TD(ADIAAT),     TD(OE),      _______,     _______,     TD(YMINS),   DE_Z,         MO(SHIF),    TD(COMMQ),   TD(KQ),
+    KC_J,             KC_D,        KC_U,         KC_A,           KC_X,                                   KC_P,        KC_H,         KC_L,        KC_M,        KC_W,
+    LT(STRG,KC_C),    KC_T,        KC_I,         KC_E,           KC_O,                                   KC_B,        KC_N,         KC_R,        TD(ESZET),   KC_G,
+    KC_F,             TD(VEXCL),   TD(UE),       TD(ADIAAT),     TD(OE),      _______,     _______,     TD(YMINS),   DE_Z,         MO(SHIF),    TD(COMMQ),   TD(KQ),
     _______,          _______,     _______,      TD(NAVNUM),     MO(SHIF),     KC_DOT,      KC_BSPC,     KC_SPC,      KC_ENT,       _______,     _______,     _______ ),
 
 
   [SHIF] = LAYOUT( 
-    S(KC_J),         S(KC_D),      S(KC_U),      TD(SHIAA),      S(KC_X),                               S(KC_P),      S(KC_H),      S(KC_L),      S(KC_M),      S(KC_W),
-    S(KC_C),         S(KC_T),      S(KC_I),      TD(SHIEE),      S(KC_O),                               S(KC_B),      S(KC_N),      S(KC_R),      S(KC_S),      S(KC_G),
+    S(KC_J),         S(KC_D),      S(KC_U),      S(KC_A),        S(KC_X),                               S(KC_P),      S(KC_H),      S(KC_L),      S(KC_M),      S(KC_W),
+    S(KC_C),         S(KC_T),      S(KC_I),      S(KC_E),        S(KC_O),                               S(KC_B),      S(KC_N),      S(KC_R),      S(KC_S),      S(KC_G),
     S(KC_F),         S(KC_V),      S(DE_UDIA),   S(DE_ADIA),     TD(SHIOE),    _______,     _______,    S(DE_Y),      S(DE_Z),      DE_UNDS,      DE_SEMI,      TD(SHIKQ),
     _______,         _______,      _______,      TG(NUM),        DE_DQUO,      DE_COLN,     KC_DEL,     KC_SPC,       S(KC_ENT),    _______,      _______,      _______ ),
 

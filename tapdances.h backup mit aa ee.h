@@ -25,8 +25,18 @@ enum {
     STARPIPEPM,
     YMINS,
     ADIAAT,
+    AA,
+    EE,
+    II,
+    OO,
+    UU,
     OE,
     UE,
+    SHIAA,
+    SHIEE,
+    SHIII,
+    SHIOO,
+    SHIUU,
     SHIOE,
     SHIUE,
     EURDOLLPARA,
@@ -141,6 +151,86 @@ void adiaat(qk_tap_dance_state_t *state, void *user_data) {
   SEND_STRING(SS_RALT(SS_TAP(X_Q)));}
 }
 
+void aa(qk_tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+  SEND_STRING(SS_TAP(X_A));
+  reset_tap_dance (state); }
+    else if (state->count == 2) {
+  SEND_STRING(SS_TAP(X_A) SS_TAP(X_A));
+  reset_tap_dance (state); }
+    else if (state->count == 3) {
+    register_code(KC_LALT);
+    tap_code(KC_KP_1);
+    tap_code(KC_KP_6);
+    tap_code(KC_KP_0);
+    unregister_code(KC_LALT);
+    }
+}
+
+void ee(qk_tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+  SEND_STRING(SS_TAP(X_E));
+  reset_tap_dance (state); }
+    else if (state->count == 2) {
+  SEND_STRING(SS_TAP(X_E) SS_TAP(X_E));
+  reset_tap_dance (state); }
+    else if (state->count == 3) {
+    register_code(KC_LALT);
+    tap_code(KC_KP_1);
+    tap_code(KC_KP_3);
+    tap_code(KC_KP_0);
+    unregister_code(KC_LALT);
+    }
+}
+
+void ii(qk_tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+  SEND_STRING(SS_TAP(X_I));
+  reset_tap_dance (state); }
+    else if (state->count == 2) {
+  SEND_STRING(SS_TAP(X_I) SS_TAP(X_I));
+  reset_tap_dance (state); }
+    else if (state->count == 3) {
+    register_code(KC_LALT);
+    tap_code(KC_KP_1);
+    tap_code(KC_KP_6);
+    tap_code(KC_KP_1);
+    unregister_code(KC_LALT);
+    }
+}
+
+void oo(qk_tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+  SEND_STRING(SS_TAP(X_O));
+  reset_tap_dance (state); }
+    else if (state->count == 2) {
+  SEND_STRING(SS_TAP(X_O) SS_TAP(X_O));
+  reset_tap_dance (state); }
+    else if (state->count == 3) {
+    register_code(KC_LALT);
+    tap_code(KC_KP_1);
+    tap_code(KC_KP_6);
+    tap_code(KC_KP_2);
+    unregister_code(KC_LALT);
+    }
+}
+
+void uu(qk_tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+  SEND_STRING(SS_TAP(X_U));
+  reset_tap_dance (state); }
+    else if (state->count == 2) {
+  SEND_STRING(SS_TAP(X_U) SS_TAP(X_U));
+  reset_tap_dance (state); }
+    else if (state->count == 3) {
+    register_code(KC_LALT);
+    tap_code(KC_KP_1);
+    tap_code(KC_KP_6);
+    tap_code(KC_KP_3);
+    unregister_code(KC_LALT);
+    }
+}
+
 void oe(qk_tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
   SEND_STRING(SS_TAP(X_SCLN));
@@ -165,6 +255,75 @@ void ue(qk_tap_dance_state_t *state, void *user_data) {
     tap_code(KC_KP_3);
     tap_code(KC_KP_6);
     tap_code(KC_KP_9);
+    unregister_code(KC_LALT);
+    }
+}
+
+void shiaa(qk_tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+  SEND_STRING(SS_LSFT(SS_TAP(X_A)));
+  reset_tap_dance (state); }
+    else if (state->count == 3) {
+    register_code(KC_LALT);
+    tap_code(KC_KP_0);
+    tap_code(KC_KP_1);
+    tap_code(KC_KP_9);
+    tap_code(KC_KP_3);
+    unregister_code(KC_LALT);
+    }
+}
+
+void shiee(qk_tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+  SEND_STRING(SS_LSFT(SS_TAP(X_E)));
+  reset_tap_dance (state); }
+    else if (state->count == 3) {
+    register_code(KC_LALT);
+    tap_code(KC_KP_1);
+    tap_code(KC_KP_4);
+    tap_code(KC_KP_4);
+    unregister_code(KC_LALT);
+    }
+}
+
+void shiii(qk_tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+  SEND_STRING(SS_LSFT(SS_TAP(X_I)));
+  reset_tap_dance (state); }
+    else if (state->count == 3) {
+    register_code(KC_LALT);
+    tap_code(KC_KP_0);
+    tap_code(KC_KP_2);
+    tap_code(KC_KP_0);
+    tap_code(KC_KP_5);
+    unregister_code(KC_LALT);
+    }
+}
+
+void shioo(qk_tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+  SEND_STRING(SS_LSFT(SS_TAP(X_O)));
+  reset_tap_dance (state); }
+    else if (state->count == 3) {
+    register_code(KC_LALT);
+    tap_code(KC_KP_0);
+    tap_code(KC_KP_2);
+    tap_code(KC_KP_1);
+    tap_code(KC_KP_1);
+    unregister_code(KC_LALT);
+    }
+}
+
+void shiuu(qk_tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+  SEND_STRING(SS_LSFT(SS_TAP(X_U)));
+  reset_tap_dance (state); }
+    else if (state->count == 3) {
+    register_code(KC_LALT);
+    tap_code(KC_KP_0);
+    tap_code(KC_KP_2);
+    tap_code(KC_KP_1);
+    tap_code(KC_KP_8);
     unregister_code(KC_LALT);
     }
 }
@@ -249,8 +408,18 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     [STARPIPEPM] = ACTION_TAP_DANCE_FN(starpipepm),
     [YMINS] = ACTION_TAP_DANCE_DOUBLE(KC_Z, KC_SLSH),
     [ADIAAT] = ACTION_TAP_DANCE_FN(adiaat),
+    [AA] = ACTION_TAP_DANCE_FN(aa),
+    [EE] = ACTION_TAP_DANCE_FN(ee),
+    [II] = ACTION_TAP_DANCE_FN(ii),
+    [OO] = ACTION_TAP_DANCE_FN(oo),
+    [UU] = ACTION_TAP_DANCE_FN(uu),
     [OE] = ACTION_TAP_DANCE_FN(oe),
     [UE] = ACTION_TAP_DANCE_FN(ue),
+    [SHIAA] = ACTION_TAP_DANCE_FN(shiaa),
+    [SHIEE] = ACTION_TAP_DANCE_FN(shiee),
+    [SHIII] = ACTION_TAP_DANCE_FN(shiii),
+    [SHIOO] = ACTION_TAP_DANCE_FN(shioo),
+    [SHIUU] = ACTION_TAP_DANCE_FN(shiuu),
     [SHIOE] = ACTION_TAP_DANCE_FN(shioe),
     [SHIUE] = ACTION_TAP_DANCE_FN(shiue),
     [EURDOLLPARA] = ACTION_TAP_DANCE_FN(eurdollpara),
