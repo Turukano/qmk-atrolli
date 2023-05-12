@@ -45,3 +45,5 @@
 #define FN_H1 C(A(KC_1))
 #define FN_BULLET C(S(KC_L)) //
 #define FN_FOOTN C(A(KC_F))
+
+#define FN_NO C(KC_A)
