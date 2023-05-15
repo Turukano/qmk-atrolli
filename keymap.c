@@ -5,7 +5,6 @@
 bool is_alt_tab_active = false; // ADD this near the beginning of keymap.c
 uint16_t alt_tab_timer = 0;     // we will be using them soon.
 
-
 enum layer_names {
     DEF,
     SHIF,
