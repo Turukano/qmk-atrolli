@@ -21,6 +21,9 @@ enum combos {
   WINGUI,
   ESCAPING,
   DELETING,
+  BOOT,
+  TAB,
+  BTAB,
   COMBO_LENGTH
 };
 uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define and use this instead!
@@ -41,12 +44,15 @@ const uint16_t PROGMEM sla[] = {KC_B, KC_N, COMBO_END};
 const uint16_t PROGMEM sla2[] = {TD(STARPIPEPM), KC_4, COMBO_END};
 const uint16_t PROGMEM bsla[] = {S(KC_B), S(KC_N), COMBO_END};
 const uint16_t PROGMEM quit[] = {KC_N, KC_R, TD(ESZET), KC_G, COMBO_END};
-const uint16_t PROGMEM minus[] = {DE_Z, MO(SHIF), COMBO_END};
+const uint16_t PROGMEM minus[] = {TD(YMINS), DE_Z, COMBO_END};
 const uint16_t PROGMEM alttab[] = {KC_R, TD(ESZET), COMBO_END};
-const uint16_t PROGMEM altbtab[] = {KC_H, KC_L, COMBO_END};
-const uint16_t PROGMEM wingui[] = {KC_C, KC_T, KC_I, KC_E, COMBO_END};
+const uint16_t PROGMEM altbtab[] = {KC_R, KC_N, COMBO_END};
+const uint16_t PROGMEM wingui[] = {KC_T, KC_I, KC_E, COMBO_END};
 const uint16_t PROGMEM escaping[] = {KC_J, KC_D, COMBO_END};
 const uint16_t PROGMEM deleting[] = {KC_M, KC_W, COMBO_END};
+const uint16_t PROGMEM boot[] = {KC_F, KC_J, COMBO_END};
+const uint16_t PROGMEM tab[] = {DE_Z, MO(SHIF), COMBO_END};
+const uint16_t PROGMEM btab[] = {MO(SHIF), TD(COMMQ), COMBO_END};
 
 combo_t key_combos[] = {
     [NAVSTRG] = COMBO(navstrg, KC_LCTL),
@@ -70,5 +76,8 @@ combo_t key_combos[] = {
     [ALTBTAB] = COMBO(altbtab, ALT_BTAB),
     [ESCAPING] = COMBO(escaping, KC_ESC),
     [WINGUI] = COMBO(wingui, KC_LGUI),
-    [DELETING] = COMBO(deleting, KC_DEL)
+    [DELETING] = COMBO(deleting, KC_DEL),
+    [BOOT] = COMBO(boot, QK_MAKE),
+    [TAB] = COMBO(tab, KC_TAB),
+    [BTAB] = COMBO(btab, S(KC_TAB)),
 };

@@ -5,8 +5,6 @@
 bool is_alt_tab_active = false; // ADD this near the beginning of keymap.c
 uint16_t alt_tab_timer = 0;     // we will be using them soon.
 
-bool is_alt_btab_active = false; // ADD this near the beginning of keymap.c
-uint16_t alt_btab_timer = 0;     // we will be using them soon.
 
 enum layer_names {
     DEF,
@@ -35,31 +33,45 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if (record->event.pressed) {
         if (!is_alt_tab_active) {
           is_alt_tab_active = true;
+          unregister_code(KC_LSFT);
           register_code(KC_LALT);
+        }
+        else if (is_alt_tab_active) {
+          register_code(KC_LALT);
+          unregister_code(KC_LSFT);
         }
         alt_tab_timer = timer_read();
         register_code(KC_TAB);
       } else {
-        unregister_code(KC_TAB);} break;
+        unregister_code(KC_TAB);
+        unregister_code(KC_LSFT);
+    } break;
 
     case ALT_BTAB:
       if (record->event.pressed) {
-        if (!is_alt_btab_active) {
-          is_alt_btab_active = true;
+        if (!is_alt_tab_active) {  
+          is_alt_tab_active = true;
           register_code(KC_LALT);
           register_code(KC_LSFT);
         }
-        alt_btab_timer = timer_read();
+        else if (is_alt_tab_active) {
+          register_code(KC_LALT);
+          register_code(KC_LSFT);
+        }
+        alt_tab_timer = timer_read();
         register_code(KC_TAB);
+        unregister_code(KC_LSFT);
       } else {
-        unregister_code(KC_TAB);} break;
+        unregister_code(KC_TAB);
+        unregister_code(KC_LSFT);
+    } break;
 
   }
   return true;
 };
 
 
-void matrix_scan_user(void) { // The very important timer.
+void matrix_scan_user(void) {
   if (is_alt_tab_active) {
     if (timer_elapsed(alt_tab_timer) > 1000) {
       unregister_code(KC_LALT);
