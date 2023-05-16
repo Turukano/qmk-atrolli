@@ -58,9 +58,9 @@ static td_tap_t xtap_state = {
 void navnum(qk_tap_dance_state_t *state, void *user_data) {
     xtap_state.state = cur_dance(state);
     switch (xtap_state.state) {
-        case TD_SINGLE_TAP: layer_on(NAV); break;
+        case TD_SINGLE_TAP: /*layer_on(NAV)*/; break;
         case TD_SINGLE_HOLD: layer_on(NAV); break;
-        case TD_DOUBLE_TAP: layer_on(NUM); break;
+        case TD_DOUBLE_TAP: /*layer_on(NUM)*/; break;
         case TD_DOUBLE_HOLD: layer_on(NUM); break;
         case TD_DOUBLE_SINGLE_TAP: tap_code(KC_NO); register_code(KC_NO); break;
         default: break;
@@ -69,9 +69,9 @@ void navnum(qk_tap_dance_state_t *state, void *user_data) {
 
 void navnum_res(qk_tap_dance_state_t *state, void *user_data) {
     switch (xtap_state.state) {
-        case TD_SINGLE_TAP: unregister_code(KC_NO); break;
+        case TD_SINGLE_TAP: /*unregister_code(KC_NO)*/; break;
         case TD_SINGLE_HOLD: layer_off(NAV); break;
-        case TD_DOUBLE_TAP: unregister_code(KC_NO); break;
+        case TD_DOUBLE_TAP: /*unregister_code(KC_NO)*/; break;
         case TD_DOUBLE_HOLD: layer_off(NUM); break;
         case TD_DOUBLE_SINGLE_TAP: unregister_code(KC_NO); break;
         default: break;
