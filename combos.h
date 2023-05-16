@@ -24,11 +24,16 @@ enum combos {
   BOOT,
   TAB,
   BTAB,
+  TAB2,
+  BTAB2,
   CTAB,
   SELLINEB,
   SELLINEF,
   NUMCOMBO,
   SWAP,
+  FTWO,
+  APO,
+  NEIN,
   COMBO_LENGTH
 };
 uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define and use this instead!
@@ -54,16 +59,20 @@ const uint16_t PROGMEM alttab[] = {KC_R, TD(ESZET), COMBO_END};
 const uint16_t PROGMEM altbtab[] = {KC_R, KC_N, COMBO_END};
 const uint16_t PROGMEM wingui[] = {KC_T, KC_I, KC_E, COMBO_END};
 const uint16_t PROGMEM escaping[] = {KC_J, KC_D, COMBO_END};
+const uint16_t PROGMEM nein[] = {KC_D, KC_U, COMBO_END};
 const uint16_t PROGMEM deleting[] = {KC_M, KC_W, COMBO_END};
 const uint16_t PROGMEM boot[] = {KC_F, KC_J, COMBO_END};
-const uint16_t PROGMEM tab[] = {S(KC_R), S(KC_S), COMBO_END};
-const uint16_t PROGMEM btab[] = {S(KC_N), S(KC_R), COMBO_END};
+const uint16_t PROGMEM tab[] = {KC_R, TD(ESZET), KC_G, COMBO_END};
+const uint16_t PROGMEM btab[] = {KC_B, KC_N, KC_R, COMBO_END};
+const uint16_t PROGMEM tab2[] = {KC_5, KC_6, KC_0, COMBO_END};
+const uint16_t PROGMEM btab2[] = {TD(STARPIPEPM), KC_4, KC_5, COMBO_END};
 const uint16_t PROGMEM ctab[] = {KC_LEFT, KC_DOWN, KC_RGHT, KC_F5, COMBO_END};
 const uint16_t PROGMEM sellineb[] = {KC_LEFT, KC_DOWN, COMBO_END};
 const uint16_t PROGMEM sellinef[] = {KC_DOWN, KC_RGHT, COMBO_END};
-const uint16_t PROGMEM numcombo[] = {KC_F, MO(SHIF), COMBO_END};
+const uint16_t PROGMEM numcombo[] = {LT(STRG,KC_C), MO(SHIF), COMBO_END};
 const uint16_t PROGMEM swap[] = {KC_N, KC_R, TD(ESZET), COMBO_END};
-
+const uint16_t PROGMEM ftwo[] = {S(KC_T), S(KC_I), COMBO_END};
+const uint16_t PROGMEM apo[] = {KC_I, KC_E, COMBO_END};
 
 combo_t key_combos[] = {
     [NAVSTRG] = COMBO(navstrg, KC_LCTL),
@@ -91,9 +100,14 @@ combo_t key_combos[] = {
     [BOOT] = COMBO(boot, QK_MAKE),
     [TAB] = COMBO(tab, KC_TAB),
     [BTAB] = COMBO(btab, S(KC_TAB)),
+    [TAB2] = COMBO(tab2, KC_TAB),
+    [BTAB2] = COMBO(btab2, S(KC_TAB)),
     [CTAB] = COMBO(ctab, C(KC_F4)),
     [SELLINEB] = COMBO(ctab, S(KC_HOME)),
     [SELLINEF] = COMBO(ctab, S(KC_END)),
     [NUMCOMBO] = COMBO(numcombo, MO(NUM)),
     [SWAP] = COMBO(swap, SW_AP),
+    [FTWO] = COMBO(ftwo, KC_F2),
+    [APO] = COMBO(apo, S(KC_NUHS)),
+    [NEIN] = COMBO(nein, A(KC_N)),
 };

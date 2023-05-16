@@ -33,6 +33,7 @@ enum {
     ENTIST,
     PLUSIST,
     PERDEGTILD,
+    SAVEAS,
 };
 
 td_state_t cur_dance(qk_tap_dance_state_t *state) {
@@ -239,6 +240,15 @@ void perdegtild(qk_tap_dance_state_t *state, void *user_data) {
     }
 }
 
+void saveas(qk_tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+  SEND_STRING(SS_LSFT(SS_TAP(X_S)));
+  reset_tap_dance (state); }
+    else if (state->count == 2) {
+  SEND_STRING(SS_TAP(X_F12));
+  reset_tap_dance (state); }
+}
+
 qk_tap_dance_action_t tap_dance_actions[] = {
     [NAVNUM] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, navnum, navnum_res),
     [KQ] = ACTION_TAP_DANCE_DOUBLE(KC_K, KC_Q),
@@ -257,4 +267,5 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     [ENTIST] = ACTION_TAP_DANCE_FN(entist),
     [PLUSIST] = ACTION_TAP_DANCE_FN(plusist),
     [PERDEGTILD] = ACTION_TAP_DANCE_FN(perdegtild),
+    [SAVEAS] = ACTION_TAP_DANCE_FN(saveas),
 };

@@ -119,7 +119,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //Zahlen überarbeiten. Erstens will ich besser ran kommen und zweitens will ich da noch mehr machen, als nur Zahlen. Dot und Klammern müssen verfügbar sein, aber auch Arrows eigentlich
   [STRG] = LAYOUT( 
     LWIN(DE_Y),      FN_DESKTOP,   _______,      FN_SEALL,       FN_CUT,                                FN_PRINT,     FN_NO,      FN_LCKSCRN,   FN_ROTATE,    FN_TXTSHT,
-    _______,         C(KC_T),      FN_TXTSHT,    FN_EXPL,        _______,                               FN_BULLET,    FN_NEW,       FN_RUN,       FN_SAVE,      FN_SCRNSHT,
+    _______,         C(KC_T),      FN_TXTSHT,    FN_EXPL,        _______,                               FN_BULLET,    FN_NEW,       FN_RUN,       TD(SAVEAS),      FN_SCRNSHT,
     FN_SEARCH,       _______,      _______,      _______,        _______,      _______,     _______,    FN_REDO,      FN_UNDO,      _______,      FN_STREAM,    FN_PROJECT,
     _______,         _______,      _______,      _______,        _______,      _______,     C(KC_BSPC), _______,      C(KC_ENTER),  _______,      _______,     _______ ),
 
