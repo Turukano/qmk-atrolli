@@ -97,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LT(STRG,KC_C),    KC_T,        KC_I,         KC_E,           KC_O,                                   KC_B,        KC_N,         KC_R,        TD(ESZET),   KC_G,
     KC_F,             TD(VEXCL),   TD(UE),       TD(ADIAAT),     TD(OE),      _______,     _______,     TD(YMINS),   DE_Z,         MO(SHIF),    TD(COMMQ),   TD(KQ),
     _______,          _______,     _______,      TD(NAVNUM),     MO(SHIF),     KC_DOT,      KC_BSPC,     KC_SPC,      KC_ENT,       _______,     _______,     _______ ),
-
+//IDEE: Hold c to copy, hold p to paste (statt combo) https://github.com/qmk/qmk_firmware/blob/master/docs/mod_tap.md
 
   [SHIF] = LAYOUT( 
     S(KC_J),         S(KC_D),      S(KC_U),      S(KC_A),        S(KC_X),                               S(KC_P),      S(KC_H),      S(KC_L),      S(KC_M),      S(KC_W),
@@ -122,7 +122,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,         C(KC_T),      FN_TXTSHT,    FN_EXPL,        _______,                               FN_BULLET,    FN_NEW,       FN_RUN,       TD(SAVEAS),      FN_SCRNSHT,
     FN_SEARCH,       _______,      _______,      _______,        _______,      _______,     _______,    FN_REDO,      FN_UNDO,      _______,      FN_STREAM,    FN_PROJECT,
     _______,         _______,      _______,      _______,        _______,      _______,     C(KC_BSPC), _______,      C(KC_ENTER),  _______,      _______,     _______ ),
-
+//word kursiv etc fehlen noch
   [FFOX] = LAYOUT( 
     _______,         _______,      _______,      _______,        _______,                               _______,      FN_FFGOBACK,  FN_FFNTAB,    FN_FFGOFORTH, _______,
     _______,         _______,      _______,      _______,        _______,                               _______,      FN_FFLEFT,    FN_FFXTAB,    FN_FFRIGHT,   _______,
@@ -135,3 +135,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,         _______,      _______,      _______,        _______,      _______,     _______,    _______,      _______,      _______,      _______,      _______,
     _______,         _______,      _______,      _______,        _______,      _______,     _______,    _______,      _______,      _______,      _______,      _______ ),
 };
+
+
+//copypaste: über Combo? über hold? über tapdance? Und es gibt ja noch das INS auf der Nav ebene...

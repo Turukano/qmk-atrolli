@@ -242,7 +242,7 @@ void perdegtild(qk_tap_dance_state_t *state, void *user_data) {
 
 void saveas(qk_tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
-  SEND_STRING(SS_LSFT(SS_TAP(X_S)));
+  SEND_STRING(SS_LCTL(SS_TAP(X_S)));
   reset_tap_dance (state); }
     else if (state->count == 2) {
   SEND_STRING(SS_TAP(X_F12));
