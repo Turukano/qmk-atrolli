@@ -1,3 +1,15 @@
+bool is_alt_tab_active = false;
+uint16_t alt_tab_timer = 0; 
+
+enum custom_keycodes {
+    UNNAV = SAFE_RANGE,
+    UNNUM,
+    ALT_TAB,
+    ALT_BTAB,
+    SW_AP,
+    SEL_LINE,
+};
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) { 
     case UNNAV: if (record->event.pressed) {layer_off(NAV);} break;
@@ -202,9 +214,29 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
+    case LT(0,KC_N):
+    if (!record->tap.count && record->event.pressed) {
+                tap_code16(C(KC_C)); // Intercept hold function to send Ctrl-C
+                return false;
+            }
+
+    case LT(0,KC_R):
+            if (!record->tap.count && record->event.pressed) {
+                tap_code16(C(KC_V)); // Intercept hold function to send Ctrl-V
+                return false;
+            }
+
+    case LT(0,KC_L):
+            if (!record->tap.count && record->event.pressed) {
+                tap_code16(C(KC_T)); // Intercept hold function to send Ctrl-V
+                return false;
+            }
+
   }
   return true;
 };
+
+
 
 
 void matrix_scan_user(void) {
