@@ -1,6 +1,5 @@
 enum combos {
   NAVSTRG,
-  ACCENT,
   BRO,
   BRO2,
   BRC,
@@ -29,17 +28,18 @@ enum combos {
   CTAB,
   SELLINEB,
   SELLINEF,
+  SELLINE,
   NUMCOMBO,
   SWAP,
   FTWO,
   APO,
   NEIN,
+  APP,
   COMBO_LENGTH
 };
 uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define and use this instead!
 
 const uint16_t PROGMEM navstrg[] = {KC_A, KC_B, COMBO_END};
-const uint16_t PROGMEM accent[] = {KC_A, KC_X, COMBO_END};
 const uint16_t PROGMEM bro[] = {KC_H, KC_L, COMBO_END};
 const uint16_t PROGMEM bro2[] = {KC_7, KC_8, COMBO_END};
 const uint16_t PROGMEM brc[] = {KC_L, KC_M, COMBO_END};
@@ -57,9 +57,9 @@ const uint16_t PROGMEM quit[] = {KC_H, KC_L, KC_M, KC_W, COMBO_END};
 const uint16_t PROGMEM minus[] = {TD(YMINS), DE_Z, COMBO_END};
 const uint16_t PROGMEM alttab[] = {KC_R, TD(ESZET), COMBO_END};
 const uint16_t PROGMEM altbtab[] = {KC_R, KC_N, COMBO_END};
-const uint16_t PROGMEM wingui[] = {KC_T, KC_I, KC_E, COMBO_END};
+const uint16_t PROGMEM wingui[] = {KC_T,        LT(0,KC_I),   LT(0,KC_E), COMBO_END};
 const uint16_t PROGMEM escaping[] = {KC_J, KC_D, COMBO_END};
-const uint16_t PROGMEM nein[] = {KC_D, KC_U, COMBO_END};
+const uint16_t PROGMEM nein[] = {KC_D,        LT(0,KC_U), COMBO_END};
 const uint16_t PROGMEM deleting[] = {KC_M, KC_W, COMBO_END};
 const uint16_t PROGMEM boot[] = {KC_F, KC_J, COMBO_END};
 const uint16_t PROGMEM tab[] = {KC_R, TD(ESZET), KC_G, COMBO_END};
@@ -71,12 +71,13 @@ const uint16_t PROGMEM sellineb[] = {KC_LEFT, KC_DOWN, COMBO_END};
 const uint16_t PROGMEM sellinef[] = {KC_DOWN, KC_RGHT, COMBO_END};
 const uint16_t PROGMEM numcombo[] = {LT(STRG,KC_C), MO(SHIF), COMBO_END};
 const uint16_t PROGMEM swap[] = {KC_N, KC_R, TD(ESZET), COMBO_END};
-const uint16_t PROGMEM ftwo[] = {S(KC_T), S(KC_I), COMBO_END};
-const uint16_t PROGMEM apo[] = {KC_I, KC_E, COMBO_END};
+const uint16_t PROGMEM ftwo[] = {S(KC_T),      LT(1,S(KC_I)), COMBO_END};
+const uint16_t PROGMEM apo[] = {LT(0,KC_I),   LT(0,KC_E), COMBO_END};
+const uint16_t PROGMEM app[] = {KC_DOT, KC_BSPC, COMBO_END};
+const uint16_t PROGMEM selline[] = {KC_LEFT,      KC_DOWN,      KC_RGHT, COMBO_END};
 
 combo_t key_combos[] = {
     [NAVSTRG] = COMBO(navstrg, KC_LCTL),
-    [ACCENT] = COMBO(accent, KC_EQL),
     [BRO] = COMBO(bro, LSFT(KC_8)),
     [BRO2] = COMBO(bro2, LSFT(KC_8)),
     [BRC] = COMBO(brc, LSFT(KC_9)),
@@ -105,9 +106,11 @@ combo_t key_combos[] = {
     [CTAB] = COMBO(ctab, C(KC_F4)),
     [SELLINEB] = COMBO(sellineb, S(KC_HOME)), //funktioniert nicht
     [SELLINEF] = COMBO(sellinef, S(KC_END)), //funktioniert nicht
+    [SELLINE] = COMBO(selline, SEL_LINE),
     [NUMCOMBO] = COMBO(numcombo, MO(NUM)),
     [SWAP] = COMBO(swap, SW_AP),
     [FTWO] = COMBO(ftwo, KC_F2),
     [APO] = COMBO(apo, S(KC_NUHS)),
     [NEIN] = COMBO(nein, A(KC_N)),
+    [APP] = COMBO(app, KC_APP),
 };

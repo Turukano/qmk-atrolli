@@ -25,10 +25,6 @@ enum {
     STARPIPEPM,
     YMINS,
     ADIAAT,
-    OE,
-    UE,
-    SHIOE,
-    SHIUE,
     EURDOLLPARA,
     ENTIST,
     PLUSIST,
@@ -142,62 +138,6 @@ void adiaat(qk_tap_dance_state_t *state, void *user_data) {
   SEND_STRING(SS_RALT(SS_TAP(X_Q)));}
 }
 
-void oe(qk_tap_dance_state_t *state, void *user_data) {
-    if (state->count == 1) {
-  SEND_STRING(SS_TAP(X_SCLN));
-  reset_tap_dance (state); }
-    else if (state->count == 2) {
-    register_code(KC_LALT);
-    tap_code(KC_KP_0);
-    tap_code(KC_KP_3);
-    tap_code(KC_KP_3);
-    tap_code(KC_KP_7);
-    unregister_code(KC_LALT);
-    }
-}
-
-void ue(qk_tap_dance_state_t *state, void *user_data) {
-    if (state->count == 1) {
-  SEND_STRING(SS_TAP(X_LBRC));
-  reset_tap_dance (state); }
-    else if (state->count == 2) {
-    register_code(KC_LALT);
-    tap_code(KC_KP_0);
-    tap_code(KC_KP_3);
-    tap_code(KC_KP_6);
-    tap_code(KC_KP_9);
-    unregister_code(KC_LALT);
-    }
-}
-
-void shioe(qk_tap_dance_state_t *state, void *user_data) {
-    if (state->count == 1) {
-  SEND_STRING(SS_LSFT(SS_TAP(X_SCLN)));
-  reset_tap_dance (state); }
-    else if (state->count == 3) {
-    register_code(KC_LALT);
-    tap_code(KC_KP_0);
-    tap_code(KC_KP_3);
-    tap_code(KC_KP_3);
-    tap_code(KC_KP_6);
-    unregister_code(KC_LALT);
-    }
-}
-
-void shiue(qk_tap_dance_state_t *state, void *user_data) {
-    if (state->count == 1) {
-  SEND_STRING(SS_LSFT(SS_TAP(X_LBRC)));
-  reset_tap_dance (state); }
-    else if (state->count == 3) {
-    register_code(KC_LALT);
-    tap_code(KC_KP_0);
-    tap_code(KC_KP_3);
-    tap_code(KC_KP_6);
-    tap_code(KC_KP_8);
-    unregister_code(KC_LALT);
-    }
-}
-
 void eurdollpara(qk_tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
   SEND_STRING(SS_RALT(SS_TAP(X_E))); //€
@@ -259,10 +199,6 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     [STARPIPEPM] = ACTION_TAP_DANCE_FN(starpipepm),
     [YMINS] = ACTION_TAP_DANCE_DOUBLE(KC_Z, KC_SLSH),
     [ADIAAT] = ACTION_TAP_DANCE_FN(adiaat),
-    [OE] = ACTION_TAP_DANCE_FN(oe),
-    [UE] = ACTION_TAP_DANCE_FN(ue),
-    [SHIOE] = ACTION_TAP_DANCE_FN(shioe),
-    [SHIUE] = ACTION_TAP_DANCE_FN(shiue),
     [EURDOLLPARA] = ACTION_TAP_DANCE_FN(eurdollpara),
     [ENTIST] = ACTION_TAP_DANCE_FN(entist),
     [PLUSIST] = ACTION_TAP_DANCE_FN(plusist),
