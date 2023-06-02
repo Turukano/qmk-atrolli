@@ -1,6 +1,5 @@
 # qmk-atrolli
-
-![My Atreus](https://imgur.com/a/Dvuz7zU)
+<img src="https://i.imgur.com/k84IjAD.jpg" width="300"/>
 
 ## Alt-Tab
 
