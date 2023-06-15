@@ -16,7 +16,7 @@
 
 #pragma once
 
-#include "config_common.h"
+//#include "config_common.h"
 
 /* key matrix size */
 #define MATRIX_ROWS 4
@@ -74,4 +74,4 @@
 
 //#define COMBO_ONLY_FROM_LAYER 0
 
-#define IGNORE_MOD_TAP_INTERRUPT
+//#define IGNORE_MOD_TAP_INTERRUPT

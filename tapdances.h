@@ -32,7 +32,7 @@ enum {
     SAVEAS,
 };
 
-td_state_t cur_dance(qk_tap_dance_state_t *state) {
+td_state_t cur_dance(tap_dance_state_t *state) {
     if (state->count == 1) {
         if (state->interrupted || !state->pressed) return TD_SINGLE_TAP;
         else return TD_SINGLE_HOLD;
@@ -52,7 +52,7 @@ static td_tap_t xtap_state = {
     .state = TD_NONE
 };
 
-void navnum(qk_tap_dance_state_t *state, void *user_data) {
+void navnum(tap_dance_state_t *state, void *user_data) {
     xtap_state.state = cur_dance(state);
     switch (xtap_state.state) {
         case TD_SINGLE_TAP: /*layer_on(NAV)*/; break;
@@ -64,7 +64,7 @@ void navnum(qk_tap_dance_state_t *state, void *user_data) {
     }
 }
 
-void navnum_res(qk_tap_dance_state_t *state, void *user_data) {
+void navnum_res(tap_dance_state_t *state, void *user_data) {
     switch (xtap_state.state) {
         case TD_SINGLE_TAP: /*unregister_code(KC_NO)*/; break;
         case TD_SINGLE_HOLD: layer_off(NAV); break;
@@ -76,7 +76,7 @@ void navnum_res(qk_tap_dance_state_t *state, void *user_data) {
     xtap_state.state = TD_NONE;
 }
 
-void vexcl(qk_tap_dance_state_t *state, void *user_data) {
+void vexcl(tap_dance_state_t *state, void *user_data) {
 if (state->count == 1) {
   SEND_STRING ("v");
   reset_tap_dance (state); }
@@ -84,7 +84,7 @@ else if (state->count == 2) {
     SEND_STRING(SS_LSFT(SS_TAP(X_1))); }
 }
 
-void commq(qk_tap_dance_state_t *state, void *user_data) {
+void commq(tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
   SEND_STRING (",");
   reset_tap_dance (state); }
@@ -92,7 +92,7 @@ else if (state->count == 2) {
     SEND_STRING(SS_LSFT(SS_TAP(X_MINS)));}
 }
 
-void eszet(qk_tap_dance_state_t *state, void *user_data) {
+void eszet(tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
   SEND_STRING ("s");
   reset_tap_dance (state); }
@@ -103,7 +103,7 @@ else if (state->count == 3) {
     SEND_STRING(SS_TAP(X_MINS));}
 }
 
-void shikq(qk_tap_dance_state_t *state, void *user_data) {
+void shikq(tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
   SEND_STRING(SS_LSFT(SS_TAP(X_K)));
   reset_tap_dance (state); }
@@ -111,7 +111,7 @@ else if (state->count == 2) {
     SEND_STRING(SS_LSFT(SS_TAP(X_Q)));}
 }
 
-void starpipepm(qk_tap_dance_state_t *state, void *user_data) {
+void starpipepm(tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
   SEND_STRING(SS_LSFT(SS_TAP(X_RBRC)));
   reset_tap_dance (state); }
@@ -130,7 +130,7 @@ else if (state->count == 4) {
     }
 }
 
-void adiaat(qk_tap_dance_state_t *state, void *user_data) {
+void adiaat(tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
   SEND_STRING(SS_TAP(X_QUOT));
   reset_tap_dance (state); }
@@ -138,7 +138,7 @@ void adiaat(qk_tap_dance_state_t *state, void *user_data) {
   SEND_STRING(SS_RALT(SS_TAP(X_Q)));}
 }
 
-void eurdollpara(qk_tap_dance_state_t *state, void *user_data) {
+void eurdollpara(tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
   SEND_STRING(SS_RALT(SS_TAP(X_E))); //€
   reset_tap_dance (state); }
@@ -150,7 +150,7 @@ void eurdollpara(qk_tap_dance_state_t *state, void *user_data) {
     }
 }
 
-void entist(qk_tap_dance_state_t *state, void *user_data) {
+void entist(tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
   SEND_STRING(SS_TAP(X_ENTER));
   reset_tap_dance (state); }
@@ -159,7 +159,7 @@ void entist(qk_tap_dance_state_t *state, void *user_data) {
     }
 }
 
-void plusist(qk_tap_dance_state_t *state, void *user_data) {
+void plusist(tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
   SEND_STRING(SS_TAP(X_RBRC));
   reset_tap_dance (state); }
@@ -168,7 +168,7 @@ void plusist(qk_tap_dance_state_t *state, void *user_data) {
     }
 }
 
-void perdegtild(qk_tap_dance_state_t *state, void *user_data) {
+void perdegtild(tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
   SEND_STRING(SS_LSFT(SS_TAP(X_5))); //%
   reset_tap_dance (state); }
@@ -180,7 +180,7 @@ void perdegtild(qk_tap_dance_state_t *state, void *user_data) {
     }
 }
 
-void saveas(qk_tap_dance_state_t *state, void *user_data) {
+void saveas(tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
   SEND_STRING(SS_LCTL(SS_TAP(X_S)));
   reset_tap_dance (state); }
@@ -189,7 +189,7 @@ void saveas(qk_tap_dance_state_t *state, void *user_data) {
   reset_tap_dance (state); }
 }
 
-qk_tap_dance_action_t tap_dance_actions[] = {
+tap_dance_action_t tap_dance_actions[] = {
     [NAVNUM] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, navnum, navnum_res),
     [KQ] = ACTION_TAP_DANCE_DOUBLE(KC_K, KC_Q),
     [SHIKQ] = ACTION_TAP_DANCE_FN(shikq),
